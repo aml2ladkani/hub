@@ -38,7 +38,7 @@
              <li class="active">
                <a href="tpp.html">
                  <i class="fas fa-sm fa-tachometer-alt" style="color:firebrick;"></i>
-                 <p>tpp's</p>
+                 <p>tpp apps</p>
                </a>
              </li>
              <li>
@@ -65,12 +65,6 @@
                  <p>statistics</p>
                </a>
              </li>
-             <li>
-               <a href="report.html">
-                 <i class="fas fa-file-alt" style="color:crimson;"></i>
-                 <p>reports</p>
-               </a>
-             </li>
              <li class="active-pro">
                <a href="settings.html">
                  <i class="fas fa-cog"></i>
@@ -91,7 +85,7 @@
                    <span class="navbar-toggler-bar bar3"></span>
                  </button>
                </div>
-               <a class="navbar-brand">TPP Management</a>
+               <a class="navbar-brand">TPP Application Management</a>
              </div>
              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topnav"
               aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -114,6 +108,12 @@
                    </div>
                  </li>
                  <li class="nav-item">
+                   <a class="nav-link btn-rotate" href="add.html">
+                     <i class="nc-icon nc-simple-add"></i>
+                     <p><span class="d-lg-none d-md-block">Log Out</span></p>
+                   </a>
+                 </li>
+                 <li class="nav-item">
                    <a class="nav-link btn-rotate" href="index.html">
                      <i class="nc-icon nc-button-power"></i>
                      <p>
@@ -130,22 +130,78 @@
             <div class="col-12">
               <div class="card">
                 <div class="card-header">
-                  <h5 class="card-title">TPP List</h5>
+                  <h5 class="card-title">TPP Applications List</h5>
+                  <div class="col-lg-9">
+                    <button class="btn btn-outline-primary" type="button" data-toggle="collapse"
+                      data-target="#searchFilter" aria-expanded="false" aria-controls="searchFilter">
+                      Filter Search
+                    </button>
+                  </div>
                 </div>
                 <div class="card-body">
-                  <div class="form-group col-md-4">
-                    <label for="qsearch">Search</label>
-                    <input type="text" class="form-control" id="qsearch" placeholder="Search TPPs..">
-                  </div><br>
+                  <div class="container">
+                    <div class="collapse" id="searchFilter"><br>
+                        <form>
+                          <div class="form-row">
+                            <div class="form-group col-md-3">
+                              <label for="inputname">Search By TPP</label>
+                              <input type="text" class="form-control" id="inputname" placeholder="AT Fintech">
+                            </div>
+                            <div class="form-group col-md-3">
+                              <label for="inputname">Search By Application</label>
+                              <input type="text" class="form-control" id="inputname"
+                               placeholder="Sigma" readonly>
+                            </div>
+                            <div class="form-group col-md-3">
+                              <label for="inputname">Search By App Type</label>
+                              <input type="text" class="form-control" id="inputname"
+                               placeholder="AISP">
+                            </div>
+                            <div class="form-group col-md-3">
+                              <label for="inputname">Search By Verification Status</label>
+                              <input type="text" class="form-control" id="inputname" placeholder="Verified">
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col-md-3">
+                              <label for="inputname">Search By Alias Type</label>
+                              <input type="text" class="form-control" id="inputname"
+                               placeholder="Domain" readonly>
+                            </div>
+                            <div class="form-group col-md-3">
+                              <label for="inputname">Search By Alias Value</label>
+                              <input type="text" class="form-control" id="inputname"
+                               placeholder="hub.sigmabh.io">
+                            </div>
+                            <div class="form-group col-md-3">
+                              <label for="inputname">AISP Status</label>
+                              <input type="text" class="form-control" id="inputname"
+                               placeholder="Enabled" readonly>
+                            </div>
+                            <div class="form-group col-md-3">
+                              <label for="inputname">PISP Status</label>
+                              <input type="text" class="form-control" id="inputname"
+                               placeholder="Disabled">
+                            </div>
+                          </div>
+                          <div style="text-align:right;">
+                            <button type="submit" class="btn btn-link">Clear All Filters</button>
+                            <button class="btn btn-primary" type="button" data-toggle="collapse"
+                             data-target="#searchFilter" aria-expanded="false" aria-controls="searchFilter">
+                              Search
+                            </button>
+                          </div>
+                        </form>
+                    </div>
                   <div class="table">
                     <table class="table table-striped">
                       <thead class="thead-light">
                         <tr>
                           <th scope="col">ID</th>
+                          <th scope="col">App Name</th>
                           <th scope="col">TPP Name</th>
-                          <th scope="col">Vendor Name</th>
                           <th scope="col">Registered On</th>
-                          <th scope="col">TPP Status</th>
+                          <th scope="col">App Status</th>
                           <th scope="col">Verification</th>
                           <th scope="col">Include AISP</th>
                           <th scope="col">Include PISP</th>
@@ -162,13 +218,53 @@
                           <td>
                             <label class="switch">
                               <input type="checkbox" class="primary">
-                              <span class="slider"></span>
+                              <a href="magic.html" data-toggle="modal" data-target="#exampleModalCenter"><span class="slider"></span></a>
+                              <!-- Modal -->
+                              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h2 class="modal-title" id="exampleModalCenterTitle"><b>WARNING!</b></h2>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <h6>You are about to make a system change. Are you sure?</h6>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin-right:10px;">Back</button>
+                                      <button type="button" class="btn btn-danger" data-dismiss="modal">Confirm</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </label>
                           </td>
                           <td>
                             <label class="switch">
                               <input type="checkbox" class="primary">
-                              <span class="slider"></span>
+                              <a href="magic.html" data-toggle="modal" data-target="#exampleModalCenter"><span class="slider"></span></a>
+                              <!-- Modal -->
+                              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h2 class="modal-title" id="exampleModalCenterTitle"><b>WARNING!</b></h2>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <h6>You are about to make a system change. Are you sure?</h6>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin-right:10px;">Back</button>
+                                      <button type="button" class="btn btn-danger" data-dismiss="modal">Confirm</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </label>
                           </td>
                         </tr>
@@ -382,9 +478,6 @@
                         </tr>
                       </tbody>
                     </table>
-                    <small class="d-block text-right mt-3">
-                      <a href="#" style="color:#000;">N/A: Service blocked by CBB</a>
-                    </small>
                   </div>
                 </div>
               </div>

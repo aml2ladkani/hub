@@ -38,7 +38,7 @@
            <li>
              <a href="tpp.html">
                <i class="fas fa-sm fa-tachometer-alt" style="color:firebrick;"></i>
-               <p>tpp's</p>
+               <p>tpp apps</p>
              </a>
            </li>
            <li>
@@ -63,12 +63,6 @@
              <a href="statistic.html">
                <i class="fas fa-sm fa-chart-line" style="color:midnightblue;"></i>
                <p>statistics</p>
-             </a>
-           </li>
-           <li>
-             <a href="report.html">
-               <i class="fas fa-file-alt" style="color:crimson;"></i>
-               <p>reports</p>
              </a>
            </li>
            <li class="active-pro">
@@ -114,6 +108,12 @@
                  </div>
                </li>
                <li class="nav-item">
+                 <a class="nav-link btn-rotate" href="add.html">
+                   <i class="nc-icon nc-simple-add"></i>
+                   <p><span class="d-lg-none d-md-block">Log Out</span></p>
+                 </a>
+               </li>
+               <li class="nav-item">
                  <a class="nav-link btn-rotate" href="index.html">
                    <i class="nc-icon nc-button-power"></i>
                    <p><span class="d-lg-none d-md-block">Log Out</span></p>
@@ -129,12 +129,71 @@
             <div class="card">
               <div class="card-header">
                 <h5 class="card-title">Payments List</h5>
+                <div class="col-lg-9">
+                  <button class="btn btn-outline-primary" type="button" data-toggle="collapse"
+                    data-target="#searchFilter" aria-expanded="false" aria-controls="searchFilter">
+                    Filter Search
+                  </button>
+                </div>
               </div>
               <div class="card-body">
-                <div class="form-group col-md-4">
-                  <label for="qsearch">Search</label>
-                  <input type="text" class="form-control" id="qsearch" placeholder="Search Payments..">
-                </div><br>
+                <div class="collapse" id="searchFilter"><br>
+                    <form>
+                      <div class="form-row">
+                        <div class="form-group col-md-3">
+                          <label for="inputname">Search By App</label>
+                          <input type="text" class="form-control" id="inputname" placeholder="Sigma">
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="inputname">Search By Payment Reference</label>
+                          <input type="text" class="form-control" id="inputname"
+                           placeholder="Sigma" readonly>
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="inputname">Search By Payment Type</label>
+                          <input type="text" class="form-control" id="inputname"
+                           placeholder="Account Transfer">
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="inputname">Search By Verification Status</label>
+                          <input type="text" class="form-control" id="inputname" placeholder="Verified">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-3">
+                          <label for="inputname">Search By Date</label>
+                          <input type="text" class="form-control" id="inputname" placeholder="Register Date">
+                          <label for="inputname">to</label>
+                          <input type="text" class="form-control" id="inputname" placeholder="Expiry Date">
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="inputname">Search By Total Value</label>
+                          <input type="text" class="form-control" id="inputname" placeholder="Min Value BHD">
+                          <label for="inputname">to</label>
+                          <input type="text" class="form-control" id="inputname" placeholder="Max Value BHD">
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="inputname">Search By Installment Value</label>
+                          <input type="text" class="form-control" id="inputname" placeholder="Min Value BHD">
+                          <label for="inputname">to</label>
+                          <input type="text" class="form-control" id="inputname" placeholder="Max Value BHD">
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="inputname">Search By Account</label>
+                          <input type="text" class="form-control" id="inputname" placeholder="From Account">
+                          <label for="inputname">to</label>
+                          <input type="text" class="form-control" id="inputname" placeholder="To Account">
+                        </div>
+                      </div>
+                      <div style="text-align:right;">
+                        <button type="submit" class="btn btn-link">Clear All Filters</button>
+                        <button class="btn btn-primary" type="button" data-toggle="collapse"
+                         data-target="#searchFilter" aria-expanded="false" aria-controls="searchFilter">
+                          Search
+                        </button>
+                      </div>
+                    </form>
+                </div>
                 <table class="table table-striped">
                   <thead class="thead-light">
                     <tr>
@@ -143,10 +202,10 @@
                       <th scope="col">Date</th>
                       <th scope="col">From Account</th>
                       <th scope="col">To Account</th>
-                      <th scope="col">Value</th>
+                      <th scope="col">Total Value</th>
                       <th scope="col">Installment Value</th>
-                      <th scope="col">Payment Information</th>
-                      <th scope="col">TPP</th>
+                      <th scope="col">Payment Type</th>
+                      <th scope="col">App</th>
                       <th scope="col" style="text-align:right;">Status</th>
                     </tr>
                   </thead>
@@ -189,9 +248,6 @@
                     </tr>
                   </tbody>
                 </table>
-                <small class="d-block text-right mt-3">
-                  <a href="#" style="color:#000;">N/A: Service blocked by CBB</a>
-                </small>
               </div>
             </div>
           </div>

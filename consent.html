@@ -38,7 +38,7 @@
            <li>
              <a href="tpp.html">
                <i class="fas fa-sm fa-tachometer-alt" style="color:firebrick;"></i>
-               <p>tpp's</p>
+               <p>tpp apps</p>
              </a>
            </li>
            <li class="active">
@@ -63,12 +63,6 @@
              <a href="statistic.html">
                <i class="fas fa-sm fa-chart-line" style="color:midnightblue;"></i>
                <p>statistics</p>
-             </a>
-           </li>
-           <li>
-             <a href="report.html">
-               <i class="fas fa-file-alt" style="color:crimson;"></i>
-               <p>reports</p>
              </a>
            </li>
            <li class="active-pro">
@@ -114,6 +108,12 @@
                  </div>
                </li>
                <li class="nav-item">
+                 <a class="nav-link btn-rotate" href="add.html">
+                   <i class="nc-icon nc-simple-add"></i>
+                   <p><span class="d-lg-none d-md-block">Log Out</span></p>
+                 </a>
+               </li>
+               <li class="nav-item">
                  <a class="nav-link btn-rotate" href="index.html">
                    <i class="nc-icon nc-button-power"></i>
                    <p><span class="d-lg-none d-md-block">Log Out</span></p>
@@ -133,28 +133,61 @@
               <div class="card-body">
                 <ul class="nav nav-fill nav-pills mb-3" id="pills-tab" role="tablist">
                   <li class="nav-item">
-                    <a class="nav-link active" id="pills-aisp-tab" data-toggle="pill" href="#pills-aisp"
+                    <a class="nav-link btn-outline-primary active" id="pills-aisp-tab" data-toggle="pill" href="#pills-aisp"
                      role="tab" aria-controls="pills-aisp" aria-selected="true"><h6>AISP Consents</h6></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" id="pills-pisp-tab" data-toggle="pill" href="#pills-pisp"
+                    <a class="nav-link btn-outline-primary" id="pills-pisp-tab" data-toggle="pill" href="#pills-pisp"
                      role="tab" aria-controls="pills-pisp" aria-selected="false"><h6>PISP Consents</h6></a>
                   </li>
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-aisp" role="tabpanel" aria-labelledby="pills-aisp-tab">
-                 <div class="col-lg-9">
-                   <div class="form-group col-md-5">
-                     <label for="qsearch">Search</label>
-                     <input type="text" class="form-control" id="qsearch" placeholder="Quick Search..">
-                   </div>
-                 </div><br>
+                  <div class="col-lg-9">
+                    <button class="btn btn-outline-primary" type="button" data-toggle="collapse"
+                      data-target="#aispFilter" aria-expanded="false" aria-controls="aispFilter">
+                      Filter Search
+                    </button>
+                  </div><br>
+                  <div class="collapse" id="aispFilter"><br>
+                      <form>
+                        <div class="form-row">
+                          <div class="form-group col-md-3">
+                            <label for="inputname">Search By App</label>
+                            <input type="text" class="form-control" id="inputname" placeholder="Sigma">
+                          </div>
+                          <div class="form-group col-md-3">
+                            <label for="inputname">Search By User</label>
+                            <input type="number" class="form-control" id="inputname"
+                             placeholder="10154678" readonly>
+                          </div>
+                          <div class="form-group col-md-3">
+                            <label for="inputname">Search By Account Number</label>
+                            <input type="number" class="form-control" id="inputname"
+                             placeholder="10154678">
+                          </div>
+                          <div class="form-group col-md-3">
+                            <label for="inputname">Search By Date</label>
+                            <input type="text" class="form-control" id="inputname" placeholder="Register Date">
+                            <label for="inputname">to</label>
+                            <input type="text" class="form-control" id="inputname" placeholder="Expiry Date">
+                          </div>
+                        </div>
+                        <div style="text-align:right;">
+                          <button type="submit" class="btn btn-link">Clear All Filters</button>
+                          <button class="btn btn-primary" type="button" data-toggle="collapse"
+                           data-target="#searchFilter" aria-expanded="false" aria-controls="searchFilter">
+                            Search
+                          </button>
+                        </div>
+                      </form>
+                  </div><br>
                  <table class="table table-striped">
                   <thead class="thead-light">
                     <tr>
                       <th scope="col">ID</th>
                       <th scope="col">User</th>
-                      <th scope="col">TPP Name</th>
+                      <th scope="col">App Name</th>
                       <th scope="col">Registered On</th>
                       <th scope="col">Expires On</th>
                       <th scope="col">Account Number</th>
@@ -210,23 +243,53 @@
                     </tr>
                   </tbody>
                 </table>
-                <small class="d-block text-right mt-3">
-                  <a href="#" style="color:#000;">Last Sync: 2 Mins Ago</a>
-                </small>
               </div>
               <div class="tab-pane fade" id="pills-pisp" role="tabpanel" aria-labelledby="pills-pisp-tab">
                 <div class="col-lg-9">
-                  <div class="form-group col-md-5">
-                    <label for="qsearch">Search</label>
-                    <input type="text" class="form-control" id="qsearch" placeholder="Quick Search..">
-                  </div>
+                  <button class="btn btn-outline-primary" type="button" data-toggle="collapse"
+                    data-target="#pispFilter" aria-expanded="false" aria-controls="pispFilter">
+                    Filter Search
+                  </button>
+                </div><br>
+                <div class="collapse" id="pispFilter"><br>
+                    <form>
+                      <div class="form-row">
+                        <div class="form-group col-md-3">
+                          <label for="inputname">Search By App</label>
+                          <input type="text" class="form-control" id="inputname" placeholder="Sigma">
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="inputname">Search By User</label>
+                          <input type="number" class="form-control" id="inputname"
+                           placeholder="10154678" readonly>
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="inputname">Search By Account Number</label>
+                          <input type="number" class="form-control" id="inputname"
+                           placeholder="10154678">
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="inputname">Search By Date</label>
+                          <input type="text" class="form-control" id="inputname" placeholder="Register Date">
+                          <label for="inputname">to</label>
+                          <input type="text" class="form-control" id="inputname" placeholder="Expiry Date">
+                        </div>
+                      </div>
+                      <div style="text-align:right;">
+                        <button type="submit" class="btn btn-link">Clear All Filters</button>
+                        <button class="btn btn-primary" type="button" data-toggle="collapse"
+                         data-target="#searchFilter" aria-expanded="false" aria-controls="searchFilter">
+                          Search
+                        </button>
+                      </div>
+                    </form>
                 </div><br>
                   <table class="table">
                     <thead class="thead-light">
                       <tr>
                         <th scope="col">ID</th>
                         <th scope="col">User</th>
-                        <th scope="col">TPP Name</th>
+                        <th scope="col">App Name</th>
                         <th scope="col">Registered On</th>
                         <th scope="col">Expires On</th>
                         <th scope="col">Account Number</th>
@@ -237,9 +300,6 @@
                     <tbody>
                     </tbody>
                   </table>
-                  <small class="d-block text-right mt-3">
-                    <a href="#" style="color:#000;">Last Sync: 2 Mins Ago</a>
-                  </small>
                 </div>
               </div>
             </div>
