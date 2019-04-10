@@ -9,7 +9,12 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport'/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="css/select.min.css" rel="stylesheet"/>
+   	<link href="css/bootstrap-datepicker.css" rel="stylesheet"/>
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/bootstrap-select.js" type="text/javascript"></script>
+   	<script src="js/bootstrap-datepicker.js" type="text/javascript"></script>
     <link href="css/bootstrap.css" rel="stylesheet"/>
     <link href="css/hub.css" rel="stylesheet"/>
     <link href="css/pd.css?v=2.0.0" rel="stylesheet"/>
@@ -23,7 +28,7 @@
              <img src="img/profile.jpg">
            </div>
          </a>
-         <a class="simple-text-small logo-normal">Bahrain Islamic Bank</a>
+         <a class="simple-text-small logo-normal">Khaleeji Commercial Bank</a>
        </div>
         <div class="sidebar-wrapper">
           <ul class="nav">
@@ -108,7 +113,7 @@
                 <li class="nav-item">
                   <a class="nav-link btn-rotate" href="add.html">
                     <i class="nc-icon nc-simple-add"></i>
-                    <p><span class="d-lg-none d-md-block">Log Out</span></p>
+                    <p><span class="d-lg-none d-md-block">Add User</span></p>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -121,49 +126,8 @@
             </div>
           </div>
         </nav>
-        <div class="content" style="margin-top: 150px;">
+        <div class="content">
           <div class="row">
-            <div class="col-md-4">
-              <div class="card card-user">
-                <div class="card-body">
-                  <div class="author">
-                    <a href="#">
-                      <img class="avatar border-gray" src="img/profile.jpg">
-                      <h5 class="title">Bahrain Islamic Bank</h5>
-                    </a>
-                  </div>
-                  <p class="description text-center">
-                    User Since: 29-Mar-2019
-                  </p>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <h5 class="card-title">Connection Settings</h5>
-                </div>
-                <div class="card-body">
-                  <div class="form">
-                    <div class="mb-3">
-                      <label for="country">Connector IP</label>
-                      <input type="text" class="form-control" id="cip" placeholder="ahuk.sigmabh.io" required>
-                    </div>
-                    <div class="mb-3">
-                      <label for="country">Port Number</label>
-                      <input type="number" class="form-control" id="cport" placeholder="442" required>
-                    </div>
-                    <div class="mb-3">
-                      <label for="country">Public Key</label>
-                      <input type="text" class="form-control" id="pkey" placeholder="sadassdasdasd sasdas" required>
-                    </div>
-                    <div class="mb-3">
-                      <label for="country">Encryption Key</label>
-                      <input type="text" class="form-control" id="ekey" placeholder="dasdas sdasda" readonly>
-                    </div>
-                  </div>
-                  <button class="btn btn-primary btn-round" type="submit">Update Settings</button>
-                </div>
-              </div>
-            </div>
             <div class="col-md-8">
               <div class="card card-user">
                 <div class="card-header">
@@ -176,7 +140,7 @@
                         <div class="form-group">
                           <label>Bank</label>
                           <input type="text" class="form-control" disabled="" placeholder="Company"
-                           value="Bahrain Islamic Bank">
+                           value="Khaleeji Commercial Bank">
                         </div>
                       </div>
                       <div class="col-md-3 px-1">
@@ -210,7 +174,7 @@
                       <div class="col-md-12">
                         <div class="form-group">
                           <label>Contact Number</label>
-                          <input type="number" class="form-control" placeholder="+973-1010-289" value="+973-1010-289">
+                          <input type="number" class="form-control" placeholder="1010289" value="1010289">
                         </div>
                       </div>
                     </div>
@@ -242,6 +206,34 @@
                   </form>
                 </div>
               </div>
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title">Connection Settings</h5>
+                </div>
+                <div class="card-body">
+                  <div class="form">
+                    <div class="mb-3">
+                      <label for="country">Connector IP</label>
+                      <input type="text" class="form-control" id="cip" placeholder="ahuk.sigmabh.io" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="country">Port Number</label>
+                      <input type="number" class="form-control" id="cport" placeholder="442" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="country">Public Key</label>
+                      <input type="text" class="form-control" id="pkey" placeholder="sadassdasdasd sasdas" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="country">Encryption Key</label>
+                      <input type="text" class="form-control" id="ekey" placeholder="dasdas sdasda" readonly>
+                    </div>
+                  </div>
+                  <button class="btn btn-primary btn-round" type="submit">Update Settings</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
               <div class="card card-user">
                 <div class="card-header">
                   <h5 class="card-title">Edit Password</h5>
@@ -249,7 +241,7 @@
                 <div class="card-body">
                   <form>
                     <div class="row">
-                      <div class="col-md-5 pr-1">
+                      <div class="col-md-10 pr-1">
                         <div class="form-group">
                           <label>Old Password</label>
                           <input type="password" class="form-control">
@@ -257,13 +249,13 @@
                       </div>
                     </div>
                     <div class="row">
-                      <div class="col-md-5 pr-1">
+                      <div class="col-md-10 pr-1">
                         <div class="form-group">
                           <label>New Password</label>
                           <input type="password" class="form-control">
                         </div>
                       </div>
-                      <div class="col-md-5 pr-1">
+                      <div class="col-md-10 pr-1">
                         <div class="form-group">
                           <label>Re-enter Password</label>
                           <input type="password" class="form-control">
@@ -278,10 +270,9 @@
                   </form>
                 </div>
               </div>
-
+            </div>
             </div>
           </div>
-        </div>
               <footer class="footer footer-black footer-white ">
                 <div class="container-fluid">
                   <div class="row">
@@ -298,18 +289,9 @@
               </footer>
             </div>
           </div>
-          <script src="./js/jquery.js" type="text/javascript"></script>
           <script src="./js/popper.js" type="text/javascript"></script>
           <script src="./js/bootstrap.js" type="text/javascript"></script>
-          <script src="./js/charts.js" type="text/javascript"></script>
           <script src="./js/notification.js" type="text/javascript"></script>
           <script src="./js/pd.js?v=2.0.0" type="text/javascript"></script>
-          <script src="./js/stat-chart.js" type="text/javascript"></script>
-          <script src="./js/dash-chart.js" type="text/javascript"></script>
-          <script>
-          $(document).ready(function() {
-            demo.initChartsPages();
-          });
-          </script>
         </body>
         </html>

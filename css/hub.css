@@ -1,3 +1,5 @@
+
+
 .fas {
   size: 2px;
 }
@@ -195,10 +197,9 @@
 /* The switch - the box around the slider */
 .switch {
   position: relative;
-  display: inline-block;
   width: 40px;
   height: 24px;
-  float: left;
+  float: center;
 }
 
 /* Hide default HTML checkbox */

@@ -9,7 +9,12 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport'/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="css/select.min.css" rel="stylesheet"/>
+   	<link href="css/bootstrap-datepicker.css" rel="stylesheet"/>
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/bootstrap-select.js" type="text/javascript"></script>
+   	<script src="js/bootstrap-datepicker.js" type="text/javascript"></script>
     <link href="css/bootstrap.css" rel="stylesheet"/>
     <link href="css/hub.css" rel="stylesheet"/>
     <link href="css/pd.css?v=2.0.0" rel="stylesheet"/>
@@ -23,7 +28,7 @@
              <img src="img/profile.jpg">
            </div>
          </a>
-         <a class="simple-text-small logo-normal">Bahrain Islamic Bank</a>
+         <a class="simple-text-small logo-normal">Khaleeji Commercial Bank</a>
        </div>
        <div class="sidebar-wrapper">
          <ul class="nav">
@@ -83,7 +88,7 @@
                  <span class="navbar-toggler-bar bar3"></span>
                </button>
              </div>
-             <a class="navbar-brand">Hub Dashboard</a>
+             <a class="navbar-brand">Dashboard</a>
            </div>
            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topnav"
             aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -108,7 +113,7 @@
                <li class="nav-item">
                  <a class="nav-link btn-rotate" href="add.html">
                    <i class="nc-icon nc-simple-add"></i>
-                   <p><span class="d-lg-none d-md-block">Log Out</span></p>
+                   <p><span class="d-lg-none d-md-block">Add User</span></p>
                  </a>
                </li>
                <li class="nav-item">
@@ -159,7 +164,7 @@
                   </div>
                   <div class="col-md-9 col-sm-9 col-7">
                     <div class="numbers">
-                      <p class="card-category">Last 24 Hours</p>
+                      <p class="card-category">Last 30 Days</p>
                       <p class="card-title">923ms</p>
                     </div>
                   </div>
@@ -225,64 +230,66 @@
           </div>
           <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
             <div class="card card-stats">
-              <h5 class="card-header">Total Banks</h5>
+              <h5 class="card-header">Total TPP Apps</h5>
                 <div class="card-body">
                   <div class="metric-value d-inline-block">
-                    <h1 class="mb-1">10</h1>
+                    <h1 class="mb-1">5</h1>
                   </div>
-                  <div class="metric-label d-inline-block float-right text-secondary font-weight-bold tg-color">
-                    <span class="icon-circle-small icon-box-xs black-text cursor">
-                      <i class="fa fa-fw fa-arrow-up"></i>
-                    </span>
-                    <span class="ml-1 text-black mr-4 cursor">7</span>
-                    <span class="icon-circle-small icon-box-xs text-danger ml-3 cursor">
-                      <i class="fa fa-fw fa-arrow-down"></i>
-                    </span>
-                    <span class="ml-1 text-danger cursor">3</span>
-                  </div><br><br>
-                    <p>Traditional Banks <span class="float-right text-dark">5</span></p>
-                    <p>Islamic Banks<span class="float-right text-dark">4</span></p>
-                    <p>Financing Companies<span class="float-right text-dark">1</span></p>
+                    <br><br>
+                    <p>AISP<span class="float-right text-dark">3</span></p>
+                    <p>PISP<span class="float-right text-dark">2</span></p>
+                    <p>Merchants<span class="float-right text-dark">25</span></p>
                 </div>
                 <hr>
                 <div class="card-footer">
-                  <a class="card-link text-success">70% banks are online</a>
+                  <a class="card-link text-success">80% TPPs are active</a>
                 </div>
               </div>
             </div>
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
               <div class="card card-stats">
-                <h5 class="card-header">Total TPPs</h5>
+                <h5 class="card-header">Total Users</h5>
                   <div class="card-body">
                     <div class="metric-value d-inline-block">
-                      <h1 class="mb-1">5</h1>
-                    </div>
-                      <br><br>
-                      <p>AISP<span class="float-right text-dark">3</span></p>
-                      <p>PISP<span class="float-right text-dark">2</span></p>
-                      <p>Merchants<span class="float-right text-dark">25</span></p>
+                      <h1 class="mb-1">483K</h1>
+                    </div><br><br>
+                    <canvas id="chartHours" style="max-height:106px; min-height:106px;"></canvas>
                   </div>
                   <hr>
                   <div class="card-footer">
-                    <a class="card-link text-success">80% TPPs are active</a>
+                    <a href="account.html" class="card-link">Manage Users</a>
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                <div class="card card-stats">
-                  <h5 class="card-header">Total Users</h5>
-                    <div class="card-body">
-                      <div class="metric-value d-inline-block">
-                        <h1 class="mb-1">483K</h1>
-                      </div><br><br>
-                      <canvas id="chartHours" style="max-height:110px; min-height:110px;"></canvas>
-                    </div>
-                    <hr>
-                    <div class="card-footer">
-                      <a class="card-link">Manage Users</a>
-                    </div>
+          <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <h5 class="card-header">Total Consents</h5>
+                <div class="card-body">
+                  <div class="metric-value d-inline-block">
+                    <h1 class="mb-1">1.3M</h1>
                   </div>
+                  <div class="metric-label d-inline-block float-right text-secondary font-weight-bold tg-color">
+                    <span class="icon-circle-small icon-box-xs black-text cursor">
+                      <i class="fa fa-fw fa-arrow-up"></i>
+                    </span>
+                    <span class="ml-1 text-black mr-4 cursor">7K</span>
+                    <span class="icon-circle-small icon-box-xs text-danger ml-3 cursor">
+                      <i class="fa fa-fw fa-arrow-down"></i>
+                    </span>
+                    <span class="ml-1 text-danger cursor">3K</span>
+                  </div><br><br>
+                    <p>AISP Consents<span class="float-right text-dark">879K</span></p>
+                    <p>PISP Consents<span class="float-right text-dark">421K</span></p>
+                    <p>Accounts<span class="float-right text-dark">787K</span></p>
                 </div>
+                <hr>
+                <div class="card-footer">
+                  <a href="consent.html" class="card-link">View Consents</a>
+                </div>
+              </div>
+            </div>
+
+
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
                   <div class="card card-stats">
                     <h5 class="card-header">Payments</h5>
@@ -297,7 +304,7 @@
                       </div>
                       <hr>
                       <div class="card-footer">
-                        <a class="card-link">In Last 24 Hours</a>
+                        <a href="payment.html" class="card-link">View Payments</a>
                       </div>
                     </div>
                   </div>
@@ -306,57 +313,49 @@
                   <div class="col-xl-6 col-lg-12">
                     <div class="card">
                       <div class="card-header">
-                        <h5 class="card-title">Average Uptime</h5>
+                        <h5 class="card-title">Monthly Uptime</h5>
                       </div>
                       <div class="card-body">
                           <table class="table table-striped">
                             <thead class=" text-danger">
-                              <th>#</th>
-                              <th>Bank</th>
+                              <th>Month</th>
                               <th>Uptime</th>
                               <th>Downtime</th>
                             </thead>
                             <tbody>
                               <tr>
-                                <td>1</td>
-                                <td>Bank of Bahrain & Kuwait</td>
+                                <td>March</td>
                                 <td>99%</td>
                                 <td>15 Mins</td>
                               </tr>
                               <tr>
-                                <td>2</td>
-                                <td>Khaleeji Commercial Bank</td>
+                                <td>February</td>
                                 <td>99%</td>
                                 <td>20 Mins</td>
                               </tr>
                               <tr>
-                                <td>3</td>
-                                <td>Kuwait Commercial Bank</td>
+                                <td>January</td>
                                 <td>98%</td>
                                 <td>1 Hour</td>
                               </tr>
                               <tr>
-                                <td>4</td>
-                                <td>Ithmaar Bank</td>
+                                <td>December</td>
                                 <td>95%</td>
                                 <td>1 Hour</td>
                               </tr>
                               <tr>
-                                <td>5</td>
-                                <td>ABC Bank</td>
+                                <td>November</td>
                                 <td>92%</td>
                                 <td>2 Hours</td>
                               </tr>
                               <tr>
-                                <td>6</td>
-                                <td>Bahrain Islamic Bank</td>
+                                <td>October</td>
                                 <td>91%</td>
                                 <td>2 Hours</td>
                               </tr>
                               <tr>
-                                <td>7</td>
-                                <td>XYZ Bank</td>
-                                <td>60%</td>
+                                <td>September</td>
+                                <td>90%</td>
                                 <td>6 Hours</td>
                               </tr>
                             </tbody>
@@ -367,7 +366,7 @@
                   <div class="col-xl-6 col-lg-12">
                     <div class="card">
                       <div class="card-header">
-                        <h5 class="card-title">Active TPPs</h5>
+                        <h5 class="card-title">Active TPP Apps</h5>
                       </div>
                       <div class="card-body">
                           <table class="table table-striped">
@@ -382,43 +381,43 @@
                                 <td>1</td>
                                 <td>Sigma</td>
                                 <td>AISP | PISP</td>
-                                <td>15 Mins</td>
+                                <td>198,289</td>
                               </tr>
                               <tr>
                                 <td>2</td>
                                 <td>Hub</td>
                                 <td>AISP | PISP</td>
-                                <td>20 Mins</td>
+                                <td>157,667</td>
                               </tr>
                               <tr>
                                 <td>3</td>
                                 <td>Payment X</td>
                                 <td>PISP</td>
-                                <td>1 Hour</td>
+                                <td>80,878</td>
                               </tr>
                               <tr>
                                 <td>4</td>
                                 <td>Hop</td>
-                                <td>95%</td>
                                 <td>AISP</td>
+                                <td>36,686</td>
                               </tr>
                               <tr>
                                 <td>5</td>
                                 <td>RoboAdv</td>
-                                <td>92%</td>
                                 <td>AISP</td>
+                                <td>12,098</td>
                               </tr>
                               <tr>
                                 <td>6</td>
                                 <td>Benefit Pay</td>
-                                <td>91%</td>
                                 <td>PISP</td>
+                                <td>3,101</td>
                               </tr>
                               <tr>
                                 <td>7</td>
                                 <td>Viva Pay</td>
-                                <td>60%</td>
                                 <td>PISP</td>
+                                <td>1,976</td>
                               </tr>
                             </tbody>
                           </table>
@@ -443,13 +442,11 @@
               </footer>
             </div>
           </div>
-          <script src="./js/jquery.js" type="text/javascript"></script>
           <script src="./js/popper.js" type="text/javascript"></script>
           <script src="./js/bootstrap.js" type="text/javascript"></script>
           <script src="./js/charts.js" type="text/javascript"></script>
           <script src="./js/notification.js" type="text/javascript"></script>
-          <script src="./js/pd.js?v=2.0.0" type="text/javascript"></script>
-          <script src="./js/stat-chart.js" type="text/javascript"></script>
+          <script src="./js/pd.js" type="text/javascript"></script>
           <script src="./js/dash-chart.js" type="text/javascript"></script>
           <script>
           $(document).ready(function() {
